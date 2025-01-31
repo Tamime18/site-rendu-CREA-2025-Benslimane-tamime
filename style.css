@@ -879,7 +879,7 @@ copyright p {
         /* Paragraphe prend toute la largeur */
         width: 100%;
         /* Reste en noir ou autre color */
-        color: var(--other-color);
+        color: var(--second-bg-color);
     }
 }
 
