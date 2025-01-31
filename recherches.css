@@ -481,6 +481,10 @@ header.sticky ul li a {
     color: var(--main-color);
 }
 
+header.sticky #menu-icon{
+    color: var(--other-color);
+}
+
 /* EXP-AREA */
 /* Bloc d'expérience ou d'explication */
 .exp-area {

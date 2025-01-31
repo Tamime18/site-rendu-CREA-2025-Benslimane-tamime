@@ -298,7 +298,9 @@ header.sticky ul li a {
     color: var(--main-color);
 }
 
-
+header.sticky #menu-icon{
+    color: var(--other-color);
+}
 
 .exp-area {
     margin-bottom: 50px;

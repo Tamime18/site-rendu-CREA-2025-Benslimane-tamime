@@ -127,6 +127,7 @@ span {
     cursor: pointer;
     /* Masqué par défaut (affiché en media queries) */
     display: none;
+    color: var(--second-bg-color);
 }
 
 /* BOUTON h-btn */
@@ -369,6 +370,10 @@ header.sticky .logo {
 }
 header.sticky .navlist a {
     color: var(--main-color); /* ou noir, selon ta charte */
+}
+
+header.sticky #menu-icon{
+    color: var(--other-color);
 }
 
 /* .a-propos */
@@ -731,7 +736,7 @@ copyright p {
     }
     .logo {
         font-size: 28px;
-        color: var(--other-color);
+        color: var(--second-bg-color);
     }
 }
 
