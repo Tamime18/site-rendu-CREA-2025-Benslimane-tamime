@@ -1,0 +1,883 @@
+/* RESET DE BASE ET POLICE */
+/* Applique ces règles à tous les éléments */
+* {
+    /* Retire les marges par défaut du navigateur */
+    margin: 0;
+    /* Retire les espacements internes par défaut */
+    padding: 0;
+    /* Calcule la taille en incluant padding et bordure */
+    box-sizing: border-box;
+    /* Définit la police "Inter" pour tous les textes */
+    font-family: 'Inter', sans-serif;
+    /* Supprime la décoration des liens par défaut */
+    text-decoration: none;
+    /* Retire les puces des listes */
+    list-style: none;
+    /* Active le défilement fluide (smooth) pour les ancres */
+    scroll-behavior: smooth;
+}
+
+/* VARIABLES (PALETTE) */
+/* :root définit des variables CSS globales */
+:root {
+    /* Couleur principale du texte (gris foncé) */
+    --text-color: #1b1f24;
+    /* Couleur de fond principale (foncé) */
+    --bg-color: #1b1f24;
+    /* Couleur de fond secondaire (blanc) */
+    --second-bg-color: #fff;
+    /* Couleur tertiaire (très foncé) */
+    --third-bg-color: #22282f;
+    /* Couleur d'accent (bleu) */
+    --main-color: #13bbff;
+    /* Couleur alternative (ici noir) */
+    --other-color: black;
+
+    /* Tailles de police pour titres et paragraphes */
+    --h1-font: 4.5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1rem;
+}
+
+/* BODY */
+/* Styles de base du corps de la page */
+body {
+    /* Couleur du texte définie par la variable */
+    color: var(--text-color);
+    /* Fond de la page = "var(white)" (un usage un peu inhabituel, 
+       mais suppose un fond blanc) */
+    background: var(white);
+}
+
+/* HEADER */
+/* Barre de navigation fixée en haut */
+header {
+    /* Positionne le header de manière fixe */
+    position: fixed;
+    /* S'étend sur toute la largeur */
+    width: 100%;
+    /* Placé en haut, à droite (pour la scrollbar si besoin) */
+    top: 0;
+    right: 0;
+    /* Le place au-dessus des autres éléments (superposition) */
+    z-index: 1000;
+    /* Mise en page en flex */
+    display: flex;
+    /* Centre verticalement les items */
+    align-items: center;
+    /* Espace entre la partie gauche et droite (logo et menu) */
+    justify-content: space-between;
+    /* Espacement interne du header */
+    padding: 40px 16%;
+    /* Fond transparent par défaut */
+    background: transparent;
+    /* Transition douce (utile quand sticky) */
+    transition: all .50s ease;
+}
+
+/* .LOGO */
+/* Style du logo du site */
+.logo {
+    /* Taille de la police (assez grande) */
+    font-size: 36px;
+    /* Couleur du texte */
+    color: var(--second-bg-color);
+    /* Épaisseur semi-gras */
+    font-weight: 600;
+}
+
+/* SPAN */
+/* Sert généralement à mettre en évidence une partie du logo ou du texte */
+span {
+    /* Couleur d'accent (bleu) */
+    color: var(--main-color);
+}
+
+/* NAVLIST */
+/* Liste de liens de navigation */
+.navlist {
+    /* Mise en ligne de chaque <li>/<a> */
+    display: flex;
+}
+
+/* NAVLIST A */
+/* Style de base des liens */
+.navlist a {
+    /* Taille de police (1rem) */
+    font-size: var(--p-font);
+    /* Épaisseur moyenne */
+    font-weight: 500;
+    /* Couleur bleue */
+    color: var(--main-color);
+    /* Espace à gauche entre les liens */
+    margin-left: 40px;
+    /* Transition fluide au survol */
+    transition: all .50s ease;
+}
+
+/* NAVLIST A:HOVER */
+/* Effet quand on survole un lien */
+.navlist a:hover {
+    /* Reste en bleu */
+    color: darkblue;
+    /* Effet de halo autour du texte */
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 15px var(--main-color);
+}
+
+/* ----- Menu déroulant sur "Travail" avec effet smooth ----- */
+
+/* 1) Le conteneur de la sous-liste : par défaut, on ne l'affiche pas. */
+.navlist .dropdown {
+    /* Permet à la sous-liste .submenu de se positionner en absolu */
+    position: relative;
+}
+
+/* Sous-menu associé à .dropdown */
+.navlist .dropdown .submenu {
+    /* Position absolue, en dessous du lien parent */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* Fond blanc (second-bg-color) */
+    background: var(--second-bg-color);
+    /* Espacement interne vertical */
+    padding: 10px 0;
+    /* Bords arrondis */
+    border-radius: 6px;
+    /* Ombre de 10px autour */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Largeur minimum de 160px */
+    min-width: 160px;
+    /* Passe devant les autres éléments */
+    z-index: 9999;
+
+    /* Pour l'animation fluide au survol */
+    /* Sous-menu initialement caché */
+    visibility: hidden;
+    /* Transparent */
+    opacity: 0;
+    /* Légèrement décalé vers le bas */
+    transform: translateY(10px);
+    /* Désactive les clics si invisible */
+    pointer-events: none;
+
+    /* Transitions sur visibility, opacity et transform 
+       pour l'effet de glissement + fade */
+    transition: visibility 0s linear 0.3s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 2) Les liens de la sous-liste */
+/* Style des éléments <li> et <a> à l'intérieur du sous-menu */
+.navlist .dropdown .submenu li {
+    /* Un peu de padding horizontal */
+    padding: 5px 10px;
+    margin: 0;
+    /* Retire puces éventuelles */
+    list-style: none;
+}
+
+.navlist .dropdown .submenu li a {
+    /* S'affiche comme un bloc */
+    display: block;
+    /* Espaces internes */
+    padding: 6px 10px;
+    /* Couleur bleue */
+    color: var(--main-color);
+    /* Taille de police 1rem */
+    font-size: var(--p-font);
+    /* Aligné à gauche */
+    text-align: left;
+    /* Espace à droite de 3em (souvent pour icône) */
+    padding-right: 3em;
+    /* Transition de la couleur */
+    transition: color .3s;
+}
+
+/* Au survol d'un lien du sous-menu : reste bleu (pas de changement marqué) */
+.navlist .dropdown .submenu li a:hover {
+    color: darkblue;
+}
+
+/* 3) L'état au survol : on affiche la sous-liste avec un effet fluide */
+.navlist .dropdown:hover .submenu {
+    /* Devient visible */
+    visibility: visible;
+    /* Opacité à 1 => plus transparente */
+    opacity: 1;
+    /* Remonte à la même hauteur */
+    transform: translateY(0);
+    /* Active les clics */
+    pointer-events: auto;
+    /* Retire le délai sur visibility */
+    transition: visibility 0s linear 0s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* #MENU-ICON */
+/* Icône du menu burger sur mobile */
+#menu-icon {
+    /* Taille de l'icône */
+    font-size: 35px;
+    /* Passe devant */
+    z-index: 10001;
+    /* Curseur clic */
+    cursor: pointer;
+    /* Masqué par défaut (affiché en media queries) */
+    display: none;
+}
+
+/* .H-BTN */
+/* Bouton particulier, style header */
+.h-btn {
+    /* Inline-block (conserve marges internes) */
+    display: inline-block;
+    /* Espacements internes */
+    padding: 11px 26px;
+    /* Fond transparent */
+    background: transparent;
+    /* Texte = couleur bleue */
+    color: var(--main-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Police = 15px, semi-gras */
+    font-size: 15px;
+    font-weight: 600;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* H-BTN :HOVER */
+/* Effet au survol du bouton header */
+.h-btn:hover {
+    /* Fond = bleu principal */
+    background: var(--main-color);
+    /* Texte = couleur du fond (bg-color = #1b1f24) */
+    color: var(--bg-color);
+    /* Ombre bleue plus marquée */
+    box-shadow: 0 0 20px var(--main-color);
+    /* Léger zoom */
+    transform: scale(1.1);
+}
+
+/* SECTION */
+/* Styles génériques pour les sections */
+section {
+    /* 110px haut, 16% sur les côtés, 90px bas */
+    padding: 110px 16% 90px;
+}
+
+/* HERO */
+/* Section d'accueil, plein écran */
+.hero {
+    /* Hauteur de la section sur toute la fenêtre */
+    height: 100vh;
+    /* Largeur en pleine page */
+    width: 100%;
+
+    /*
+     Combinaison d’un dégradé semi-transparent et de l’image de fond.
+     On utilise linear-gradient pour le voile sombre 
+     puis l'image real cover.
+    */
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./img/cabinet-photo.jpg") top right / cover no-repeat;
+
+    /* On continue de centrer verticalement le contenu par Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* MAIN-CONTENT H4 */
+/* Sous-titre éventuel */
+.main-content h4 {
+    /* Taille = 1.6rem */
+    font-size: 1.6rem;
+}
+
+/* FEATURED-NAME */
+/* Nom ou titre mis en avant */
+.featured-name {
+    /* Taille 50px */
+    font-size: 50px;
+    /* Semi-gras */
+    font-weight: 600;
+    /* Marge verticale de 20px */
+    margin-block: 20px;
+}
+
+/* TYPEDTEXT */
+/* Texte animé typed.js */
+.typedText {
+    /* Met en capital la première lettre de chaque mot */
+    text-transform: capitalize;
+    /* Couleur bleue */
+    color: var(--main-color);
+}
+
+/* MAIN-CONTENT H1 */
+/* Titre principal dans la hero */
+.main-content h1 {
+    /* Taille = 4.5rem par défaut */
+    font-size: var(--h1-font);
+    /* Très gras */
+    font-weight: 900;
+    /* Marges top/bottom 20px */
+    margin: 20px 0px 20px;
+    /* Hauteur de ligne */
+    line-height: 1.2;
+    color: var(--second-bg-color);
+}
+
+/* Paragraphe hero */
+.main-content p {
+    /* Taille de police inchangée */
+    font-size: var(--p-font);
+    /* Poids normal */
+    font-weight: 400;
+    /* Largeur maximum de 620px, ajustable */
+    width: 620px;
+    max-width: 100%;
+
+    /* Couleur : du texte en blanc sur fond sombre */
+    color: var(--second-bg-color);
+
+    /* Espacement entre lignes */
+    line-height: 30px;
+    margin-bottom: 15px;
+
+    /* Ombrage pour renforcer la lisibilité */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* SOCIAL */
+/* Bloc d'icônes de réseaux */
+.social {
+    /* Espace en bas */
+    margin-bottom: 40px;
+}
+
+/* SOCIAL I */
+/* Icônes individuels */
+.social i {
+    /* Inline-flex pour centrage vertical/horizontal */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Taille 40x40 */
+    width: 40px;
+    height: 40px;
+    /* Couleur = bleu */
+    color: var(--main-color);
+    /* Forme ronde */
+    border-radius: 50%;
+    /* Filtre luminosité */
+    backdrop-filter: brightness(88%);
+    /* Police = 20px */
+    font-size: 20px;
+    /* Espace à droite = 17px */
+    margin-right: 17px;
+    /* Ombre initialement transparente */
+    box-shadow: 0 0 20px transparent;
+    /* Curseur clic */
+    cursor: pointer;
+    /* Transition fluide */
+    transition: all .50s ease;
+}
+
+/* SOCIAL I:HOVER */
+/* Survol d'une icône de réseau */
+.social i:hover {
+    /* Zoom */
+    transform: scale(1.1);
+    /* Ombre bleue */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* BTN */
+/* Bouton principal en bleu */
+.btn {
+    /* Inline-block */
+    display: inline-block;
+    /* Padding vertical/horizontal */
+    padding: 11px 26px;
+    /* Fond = bleu */
+    background: var(--main-color);
+    /* Texte = couleur du fond principal (#1b1f24) */
+    color: var(--bg-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Taille police = 15px, semi-gras */
+    font-size: 15px;
+    font-weight: 600;
+    /* Transition fluide */
+    transition: all .50s ease;
+}
+
+/* BTN:HOVER */
+/* Effet de survol sur le bouton principal */
+.btn:hover {
+    /* Fond transparent */
+    background: transparent;
+    /* Texte redevient bleu */
+    color: var(--main-color);
+    /* Ombre bleue */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* BTN2 */
+/* Bouton secondaire, transparent */
+.btn2 {
+    /* Sans fond */
+    background: transparent;
+    /* Texte bleu */
+    color: var(--main-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Marge à gauche */
+    margin-left: 15px;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+.btn2:hover {
+    /* Passe en fond bleu */
+    background: var(--main-color);
+    /* Texte = fond principal (#1b1f24) */
+    color: var(--bg-color);
+}
+
+/* HEADER.STICKY */
+/* Quand le header devient sticky (au scroll) */
+header.sticky {
+    /* Fond blanc (second-bg-color) */
+    background: var(--second-bg-color);
+    /* Légère ombre */
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, .2);
+    /* Réduit le padding */
+    padding: 16px 16%;
+}
+
+/*Couleur de texte change quand on scroll pour qu'elle reste visible*/
+header.sticky.logo {
+    color: var(--text-color);
+}
+
+header.sticky a {
+    color: var(--other-color);
+}
+
+header.sticky ul li a {
+    color: var(--main-color);
+}
+
+/* EXP-AREA */
+/* Bloc d'expérience ou d'explication */
+.exp-area {
+    /* Espace en bas = 50px */
+    margin-bottom: 50px;
+}
+.exp-area p {
+    /* Texte = #1b1f24 */
+    color: var(--text-color);
+    /* Semi-gras */
+    font-weight: 600;
+    /* Taille = 19px */
+    font-size: 19px;
+    /* Hauteur de ligne = 30px */
+    line-height: 30px;
+}
+exp-area p span {
+    /* Couleur = noir (other-color) */
+    color: var(--other-color);
+    /* Police = 1rem */
+    font-size: var(--p-font);
+    /* Poids = 400 (normal) */
+    font-weight: 400;
+    /* Marge à gauche */
+    margin-left: 8px;
+}
+
+/* CENTER-TEXT */
+/* Centrage de texte */
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    /* Titre de taille var(--h2-font) = 2.9rem */
+    font-size: var(--h2-font);
+}
+
+/* OBJECTIFS-CONTENT */
+/* Grille pour présenter les objectifs */
+.objectifs-content {
+    /* Grid adaptatif */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    /* Aligne le contenu */
+    align-items: center;
+    /* Espacement entre les éléments */
+    gap: 2.3rem;
+    /* Espace en haut = 4.2rem */
+    margin-top: 4.2rem;
+}
+
+/* BOX */
+/* Cartes d'information */
+.box {
+    /* Padding interne */
+    padding: 80px 40px 66px;
+    /* Angles arrondis */
+    border-radius: 28px;
+    /* Bordure transparente */
+    border: 1px solid transparent;
+    /* Petite ombre bleue */
+    box-shadow: 0 0 5px var(--main-color);
+    /* Transition fluide */
+    transition: all .50s ease;
+    /* Curseur en pointer */
+    cursor: pointer;
+}
+.box h3 {
+    /* Taille = 20px, gras */
+    font-size: 20px;
+    font-weight: 700;
+    /* Espace en bas */
+    margin-bottom: 10px;
+}
+.box p {
+    /* Taille de police = 1rem */
+    font-size: var(--p-font);
+    /* Poids normal */
+    font-weight: 400;
+    /* Couleur = noir (other-color) */
+    color: var(--other-color);
+    /* Hauteur de ligne = 30px */
+    line-height: 30px;
+    /* Espace en bas */
+    margin-bottom: 20px;
+}
+.box a {
+    /* Inline-block */
+    display: inline-block;
+    /* Taille de police = 22px */
+    font-size: 22px;
+    /* Hauteur de ligne ~1.273 */
+    line-height: 1.273em;
+    /* Semi-gras */
+    font-weight: 700;
+    /* Espacements verticaux = 7px */
+    padding: 7px 0;
+    /* Couleur du texte = #1b1f24 */
+    color: var(--text-color);
+    /* Bordure en bas gris (#5d6c83) */
+    border-bottom: 2px solid #5d6c83;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+.box i {
+    /* Aligne l'icône verticalement au milieu */
+    vertical-align: middle;
+    /* Taille = 25px */
+    font-size: 25px;
+    /* Couleur bleue */
+    color: var(--main-color);
+    /* Espace à gauche = 5px */
+    margin-left: 5px;
+}
+.box a:hover {
+    /* Bordure en bas devient bleue */
+    border-bottom: 2px solid var(--main-color);
+}
+.box:hover {
+    /* Bordure bleue au survol */
+    border: 1px solid var(--main-color);
+    /* Léger décalage/zoom */
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* .TRAVAIL */
+/* Section "travail" */
+.travail {
+    /* Fond = blanc */
+    background: var(--second-bg-color);
+}
+
+/* .TRAVAIL-CONTENT */
+/* Grille pour la section travail */
+.travail-content {
+    /* Grid adaptatif */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    /* Aligne verticalement */
+    align-items: center;
+    /* Espacement */
+    gap: 2.3rem;
+    /* Espace en haut = 4.2rem */
+    margin-top: 4.2rem;
+}
+
+/* ROW IMG */
+/* Style pour les images dans un bloc row */
+.row img {
+    /* Hauteur auto, largeur 100% */
+    height: auto;
+    width: 100%;
+    /* Bords arrondis */
+    border-radius: 28px;
+    /* Espace en bas */
+    margin-bottom: 1.4rem;
+}
+
+/* ROW */
+/* Bloc de présentation */
+.row {
+    /* Coins arrondis */
+    border-radius: 28px;
+    /* Bordure invisible par défaut */
+    border: 1px solid transparent;
+    /* Ombre bleue faible */
+    box-shadow: 0 0 5px var(--main-color);
+    /* Padding interne */
+    padding: 20px;
+    /* Transition fluide */
+    transition: all .50s ease;
+}
+.row h4 {
+    /* Titre = 25px, gras */
+    font-size: 25px;
+    font-weight: 700;
+    /* Espace en bas */
+    margin-bottom: 10px;
+    /* Hauteur de ligne */
+    line-height: 1.4;
+}
+.row p {
+    /* Hauteur de ligne = 1.5 */
+    line-height: 1.5;
+}
+
+/* LINKS */
+/* Style pour les liens soulignés dynamiquement */
+.links {
+    /* Couleur bleue */
+    color: var(--main-color);
+    /* Pas de soulignement */
+    text-decoration: none;
+    /* Transition douce */
+    transition: all 0.3s ease;
+}
+.links:hover {
+    /* Halo bleu au survol */
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 15px var(--main-color);
+    /* Reste en bleu */
+    color: var(--main-color);
+}
+
+/* Effet hover sur .row */
+.row:hover {
+    /* Bordure devient bleue */
+    border: 1px solid var(--main-color);
+    /* Légère élévation */
+    transform: translateY(-5px) scale(1.03);
+    /* Curseur pointer */
+    cursor: pointer;
+}
+
+/* FOOTER */
+/* Pied de page */
+.footer {
+    /* Espaces internes */
+    padding: 22px 16%;
+    /* Mise en page en flex */
+    display: flex;
+    /* Centre verticalement */
+    align-items: center;
+    /* Espace entre éléments */
+    justify-content: space-between;
+    /* Intervalle entre items */
+    gap: 2rem;
+}
+
+/* COPYRIGHT P */
+/* Texte de copyright */
+copyright p {
+    /* Taille = 15px */
+    font-size: 15px;
+    /* Poids normal */
+    font-weight: 400;
+    /* Couleur noire */
+    color: var(--other-color);
+}
+
+/* SCROLL-TOP I */
+/* Bouton / icône pour remonter la page */
+.scroll-top i {
+    /* Inline-flex => centrage */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Fond bleu */
+    background: var(--main-color);
+    /* Taille = 45x45 */
+    width: 45px;
+    height: 45px;
+    /* Arrondi */
+    border-radius: 50%;
+    /* Couleur de l'icône = text-color (foncé) */
+    color: var(--text-color);
+    /* Taille de l'icône */
+    font-size: 27px;
+}
+
+/* MEDIA QUERIES */
+/* Ajustements pour différentes largeurs d'écran */
+
+/* max-width:1700px */
+@media(max-width:1700px) {
+    header {
+        /* Réduit le padding horizontal */
+        padding: 20px 8%;
+    }
+    header.sticky {
+        /* Réduction du padding en mode sticky */
+        padding: 14px 8%;
+    }
+    section {
+        /* Sections moins larges, moins de padding latéral */
+        padding: 90px 8% 80px;
+    }
+    .footer {
+        /* Ajustement du padding pour le footer */
+        padding: 18px 8%;
+    }
+    .logo {
+        /* Logo un peu plus petit */
+        font-size: 22px;
+    }
+}
+
+/* max-width:1380px */
+@media(max-width:1380px) {
+    header {
+        /* Encore moins de padding latéral */
+        padding: 20px 5%;
+    }
+    header.sticky {
+        padding: 14px 5%;
+    }
+    section {
+        /* Espace interne réduit */
+        padding: 90px 5% 80px;
+    }
+    .footer {
+        padding: 18px 5%;
+    }
+    .hero {
+        /* Hauteur = 90vh */
+        height: 90vh;
+        /* Centre le background */
+        background-position: center;
+    }
+}
+
+/* max-width:1290px */
+@media (max-width:1290px) {
+    .box {
+        /* Réduit le padding dans .box */
+        padding: 40px 40px 46px;
+    }
+    .box img {
+        /* Images plus petites (60px) */
+        width: 100%;
+        height: 60px;
+        max-width: 60px;
+    }
+    .box h3 {
+        /* Titre plus petit = 21px */
+        font-size: 21px;
+    }
+}
+
+/* max-width:1240px */
+@media (max-width:1240px) {
+    :root {
+        /* Ajuste les tailles de police pour l'adaptatif */
+        --h1-font: 4rem;
+        --h2-font: 2.2rem;
+        --p-font: 15px;
+    }
+}
+
+/* max-width:950px */
+@media (max-width:950px) {
+    :root {
+        /* H1 un peu plus petit = 3.5rem */
+        --h1-font: 3.5rem;
+    }
+    .social {
+        /* Moins d'espace en bas */
+        margin-bottom: 20px;
+    }
+    #menu-icon {
+        /* Le menu burger apparaît */
+        display: block;
+    }
+    .navlist {
+        /* Menu mobile coulissant à droite */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        /* Vertical (flex column) */
+        display: flex;
+        flex-direction: column;
+        /* Fond sombre */
+        background: var(--bg-color);
+        /* Transition du coulissement */
+        transition: all .50s ease;
+    }
+    .navlist a {
+        /* Liens affichés en blocs */
+        display: block;
+        /* Espace interne vertical/horizontal */
+        padding: 17px;
+        /* Police plus grande = 22px */
+        font-size: 22px;
+    }
+    .navlist.active {
+        /* Le menu coulisse en position visible (right=0) */
+        right: 0;
+    }
+}
+
+/* max-width:680px */
+@media (max-width:680px) {
+    .main-content p {
+        /* Le paragraphe occupe toute la largeur */
+        width: 100%;
+    }
+}
+
+/* max-width:470px */
+@media (max-width:470px) {
+    :root {
+        /* h1 et h2 plus petits */
+        --h1-font: 3rem;
+        --h2-font: 2rem;
+    }
+}

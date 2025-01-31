@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- #CSS : Fichier de styles principal -->
+  <link rel="stylesheet" href="recherches.css">
+  <!-- #box icon : Bibliothèque d'icônes Boxicons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!--remix icon : Bibliothèque d'icônes Remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- AOS : Animate On Scroll pour les animations au défilement -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Logo du site, avec un <span> pour mettre en valeur une partie du texte -->
+    <a href="#" class="logo">Recherches, réflexion et <span>documentation</span></a>
+    
+    <!-- Icône du menu (burger) pour la version mobile -->
+    <div class="bx bx-menu" id="menu-icon"></div>
+    
+    <!-- Barre de navigation -->
+    <ul class="navlist">
+      <li><a href="index.html">Acceuil</a></li>
+      <li><a href="#objectifs">Objectifs</a></li>
+      
+      <!-- Menu déroulant 'Travail' : sous-menu caché au survol -->
+      <li class="dropdown">
+        <a href="#travail">Travail</a>
+        <ul class="submenu">
+          <li><a href="chatbot.html">Chatbot</a></li>
+          <li><a href="outils.html">Outils</a></li>
+          <li><a href="vidéos.html">Vidéos</a></li>
+          <li><a href="gestion-projet.html">Gestion de Projets</a></li>
+          <li><a href="site.html">Mon Site</a></li>
+        </ul>
+      </li>
+      <!-- Fin du menu déroulant -->
+
+      <li><a href="chatbot.html #objectifs">Suivant</a></li>
+    </ul>
+  </header>
+
+  <!-- Section Hero : zone principale de présentation -->
+  <section class="hero" id="acceuil">
+    <div class="main-content" data-aos="fade-in">
+      <div class="featured-name">
+        <h1>Je suis <span class="typedText"></span></h1>
+      </div>
+      <p>
+        Étudiant en 2ᵉ année de développement web et application à CREA Genève, j’ai réalisé un stage au cabinet
+        orthodontique du Dr Olivier Quinty à Saint-Genis. Durant ce stage, j’ai développé un chatbot intégré sur
+        WhatsApp et sur le site web du cabinet, découvrant ainsi de nouveaux défis techniques et la mise en pratique
+        concrète de ma formation CREA.
+      </p>
+      <div class="social">
+        <!-- Icônes de réseaux sociaux -->
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="https://www.instagram.com/_tdz_213_/?hl=fr"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+        <a href="https://www.youtube.com/@n-ma4023"><i class="ri-youtube-fill"></i></a>
+      </div>
+      <!-- Bouton 'Voir CV' -->
+      <div class="main-btn">
+        <a href="./img/CV finale Tamime - Copie.pdf" class="btn">Voir CV</a>
+      </div>
+    </div>0
+  </section>
+
+  <!-- Section Objectifs -->
+  <section class="objectifs" id="objectifs">
+    <div class="center-text" data-aos="fade-down">
+      <h2>O<span>BJECTIFS</span></h2>
+    </div>
+    <div class="objectifs-content" data-aos="zoom-in-up">
+      <!-- Carte décrivant un objectif -->
+      <div class="box">
+        <h3>Identifier les Besoins des Utilisateurs :</h3><br>
+        <p>
+          Objectif : Comprendre précisément les attentes et les besoins des patients et du personnel du cabinet
+          orthodontique en termes de communication et d'interaction. <br><br>
+          Raison : Assurer que le chatbot soit développé avec des fonctionnalités qui adressent directement et
+          efficacement ces besoins, augmentant ainsi l'adoption et la satisfaction utilisateur.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Évaluer les Technologies Disponibles :</h3><br>
+        <p>
+          Objectif : Examiner et sélectionner les plateformes et outils technologiques les plus adaptés pour le
+          développement du chatbot, comme Voiceflow ou d’autres alternatives potentielles.<br><br>
+          Raison : Choisir une solution qui offre le meilleur équilibre entre fonctionnalité, coût, facilité
+          d’intégration et conformité aux normes de sécurité et de confidentialité.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Documenter les Contraintes et Régulations :</h3><br>
+        <p>
+          Objectif : Collecter et comprendre les contraintes légales, techniques et opérationnelles spécifiques à
+          l’intégration de technologies dans un environnement médical.<br><br>
+          Raison : S'assurer que le développement du chatbot respecte toutes les réglementations en vigueur et éviter
+          des complications légales ou des problèmes de conformité qui pourraient survenir post-déploiement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Travail -->
+  <section class="travail" id="travail">
+    <div class="center-text" data-aos="fade-down">
+      <h2>Mes <span>Travaux</span></h2>
+    </div>
+    <div class="travail-content" data-aos="zoom-in-up">
+      <!-- Chaque 'row' représente un bloc décrivant une étape / une partie du travail -->
+      <div class="row">
+        <img src="./img/phase-coneption-partie-reflexion.jpg" alt="">
+        <h4>Phase de conception</h4>
+        <p>
+          J'ai débuté par une phase de recherche approfondie pour comprendre les attentes et les besoins du Docteur
+          Quinty. Cette étape comprenait la création d'un document contenant une série de questions destinées à cerner
+          précisément les fonctionnalités nécessaires pour le chatbot.
+        </p>
+      </div>
+      <div class="row">
+        <img src="./img/exploration-techno-partie-reflexion.jpg" alt="">
+        <h4>Exploration des Technologies</h4>
+        <p>
+          Initialement, j'ai envisagé de développer le chatbot en utilisant Python et <a class="links" href="https://flask.palletsprojects.com/en/stable/">Flask</a> pour intégrer
+          des extensions WhatsApp, mais j'ai rencontré des obstacles techniques majeurs, notamment les restrictions
+          imposées par la politique de confidentialité de WhatsApp. Cela m'a conduit à explorer d'autres options
+          disponibles sur le marché.
+        </p>
+      </div>
+      <div class="row">
+        <img src="./img/choix-plateforme-partie-reflexion.jpg" alt="">
+        <h4>Choix de la Plateforme de Développement</h4>
+        <p>
+          Après avoir visionné de nombreuses vidéos tutorielles sur
+          <a class="links" href="https://www.youtube.com/watch?v=ehTpnO7tF8E&list=PLAa3i3ZcDh5BKCTB4gIRFs-BOUoI7-k5d">YouTube</a>,
+          j'ai découvert <a class="links" href="https://www.voiceflow.com/">Voiceflow</a> et
+          <a class="links" href="https://botpress.com/fr">Botpress</a> 2 grandes plateforme de création de chatbot. Mon choix s'est porté sur Voiceflow en raison
+          de sa simplicité d'utilisation, sa <a class="links" href="https://www.voiceflow.com/docs">documentation</a> intuitive et sa
+          très grande communauté active sur <a class="links" href="https://discord.do/voiceflow-community/">discord</a>
+          qui permet de faciliter grandement le développement du chatbot.
+        </p>
+      </div>
+
+      <div></div>
+
+      <div class="row">
+        <img src="./img/voiceflow-partie-reflexion.jpg" alt="">
+        <h4>Mise en Œuvre avec Voiceflow</h4>
+        <p>
+          Voiceflow s'est révélé être un outil puissant pour la création rapide de prototypes et la mise en œuvre
+          efficace du chatbot. Grâce aux
+          <a class="links" href="https://www.youtube.com/watch?v=jWBkMZkDIYw&list=PLAa3i3ZcDh5A9KPo4sWSB5yHhmZ_-lboH">tutoriels</a>
+          disponibles, j'ai pu exploiter pleinement les fonctionnalités offertes par la plateforme, elle permet donc d'intégrer des
+          dialogues interactifs et des réponses automatisées qui reflètent les besoins spécifiques du cabinet du
+          Docteur Quinty.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="copyright">
+      <p>2025 Benslimane Tamime, CREA-Genève.</p>
+    </div>
+    <!-- Bouton permettant de remonter la page -->
+    <a href="#acceuil" class="scroll-top">
+      <i class="ri-arrow-up-s-fill"></i>
+    </a>
+  </div>
+
+  <!-- script.js-->
+  <script src="./script.js"></script>
+  <!-- AOS : animation au défilement -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Typed.js : animation de texte -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 1400,
+    });
+
+    var typingEffect = new Typed(".typedText", {
+      strings: ["Tamime", "Etudiant.", "Développeur.", "Youtubeur."],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 2000
+    });
+  </script>
+</body>
+</html>

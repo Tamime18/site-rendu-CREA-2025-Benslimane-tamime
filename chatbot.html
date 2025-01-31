@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- #CSS -->
+  <link rel="stylesheet" href="chatbot.css">
+  <!-- #box icon -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!--remix icon-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">Développement du <span>ChatBot</span></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navlist">
+      <li><a href="index.html">Acceuil</a></li>
+      <li><a href="#objectifs">Objectifs</a></li>
+      <!-- ÉLÉMENT CLÉ : le menu déroulant -->
+      <li class="dropdown">
+        <a href="#travail">Travail</a>
+        <ul class="submenu">
+          <!-- Voici vos différents travaux, 
+             chacun menant à une page ou section dédiée -->
+          <li><a href="recherches.html">Recherches</a></li>
+          <li><a href="outils.html">Outils</a></li>
+          <li><a href="vidéos.html">Vidéos</a></li>
+          <li><a href="gestion-projet.html">Gestion de Projets</a></li>
+          <li><a href="site.html">Mon Site</a></li>
+        </ul>
+      </li>
+      <!-- Fin du menu déroulant -->
+      <li><a href="recherches.html #objectifs">Précédent</a></li>
+      <li><a href="outils.html #objectifs">Suivant</a></li>
+    </ul>
+  </header>
+
+  <section class="hero" id="acceuil">
+    <div class="main-content" data-aos="fade-in">
+      <div class="featured-name">
+        <h1>Je suis <span class="typedText"></span></h1>
+      </div>
+      <p>Étudiant en 2ᵉ année de développement web et application à CREA Genève, j’ai réalisé un stage au cabinet
+        orthodontique du Dr Olivier Quinty à Saint-Genis. Durant ce stage, j’ai développé un chatbot intégré sur
+        WhatsApp et sur le site web du cabinet, découvrant ainsi de nouveaux défis techniques et la mise en pratique
+        concrète de ma formation CREA.</p>
+      <div class="social">
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="https://www.instagram.com/_tdz_213_/?hl=fr"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+        <a href="https://www.youtube.com/@n-ma4023"><i class="ri-youtube-fill"></i></a>
+      </div>
+      <div class="main-btn">
+        <a href="./img/CV finale Tamime - Copie.pdf" class="btn">Voir CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="objectifs" id="objectifs">
+    <div class="center-text" data-aos="fade-down">
+      <h2>O<span>BJECTIFS</span></h2>
+    </div>
+    <div class="objectifs-content" data-aos="zoom-in-up">
+      <div class="box">
+        <h3>Création d'une Interface Intuitive :</h3><br>
+        <p>
+          Objectif : Développer une interface utilisateur claire et facile à naviguer pour le chatbot, qui sera intégré
+          sur WhatsApp et le site web du cabinet.<br><br>
+          Raison : Une interface intuitive est cruciale pour garantir que les patients et le personnel du cabinet
+          peuvent interagir avec le chatbot sans difficultés, ce qui est essentiel pour améliorer l'expérience
+          utilisateur et l'efficacité de la communication.</p>
+      </div>
+
+      <div class="box">
+        <h3>Implémentation de Fonctionnalités Réactives :</h3><br>
+        <p>Objectif : Programmer le chatbot pour qu'il réponde de manière pertinente et précise aux différentes requêtes
+          des utilisateurs, en utilisant des technologies comme Voiceflow pour gérer les dialogues.<br><br>
+          Raison : Des réponses précises et contextuellement appropriées augmentent la fiabilité du chatbot, renforcent
+          la confiance des utilisateurs et réduisent la nécessité d'interventions humaines fréquentes.</p>
+      </div>
+
+      <div class="box">
+        <h3>Test et Optimisation :</h3><br>
+        <p>Objectif : Réaliser des tests exhaustifs pour identifier et corriger les bugs, et optimiser les performances
+          du chatbot avant son déploiement officiel.<br><br>
+          Raison : Tester de manière approfondie est indispensable pour assurer que le chatbot fonctionne correctement
+          sous différentes conditions et avec divers types d'interactions, garantissant ainsi une mise en service
+          réussie sans incidents majeurs.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="travail" id="travail">
+    <div class="center-text" data-aos="fade-down">
+      <h2>Mes <span>Travaux</span></h2>
+    </div>
+    <div class="travail-content" data-aos="zoom-in-up">
+      <div class="row">
+        <img src="./img/context-image.jpg" alt="">
+        <h4>Contexte initial </h4>
+        <p>Inspiré par une expérience réussie lors de la création d'un chatbot Télégramme sous la
+          direction du très compétent Nathanaël et d’une très bonne documentation qu'il a fournis, j'ai pensé qu’il
+          était
+          possible de réaliser cela avec WhatsApp et donc après quelques recherches, j’ai initialement opté pour Python
+          et Flask, utilisant des extensions WhatsApp et <a class="links"
+            href="https://ngrok.com/docs/what-is-ngrok/">Ngrok</a>. (Ngrok permet de rendre le chatbot accessible depuis
+          WhatsApp alors qu’on travaille en local, ce qui facilite considérablement le développement et les phases de
+          test avant un éventuel déploiement.)</p>
+      </div>
+      <div class="row">
+        <img src="./img/problematique-partie-chatbot.jpg" alt="">
+        <h4>Problématiques rencontrées </h4>
+        <p>Rapidement, des complications ont surgi, principalement dues aux restrictions
+          sévères de WhatsApp concernant l'accès à son code et à ses outils internes. WhatsApp limite l'intégration
+          directe de chatbots personnalisés via son API, imposant des règles strictes et des processus de vérification
+          rigoureux.</p>
+      </div>
+      <div class="row">
+        <img src="./img/solution-partie-chatbot.jpg" alt="">
+        <h4>Solution adoptée </h4>
+        <p>Face à ces contraintes, j'ai décidé d'abandonner le développement direct sur WhatsApp et
+          de me tourner vers Voiceflow, qui, bien que limité, offrait une intégration via l'API WhatsApp Business dans
+          un cadre plus structuré et sécurisé.</p>
+      </div>
+      <div class="row">
+        <img src="./img/dev-chatbot-voiceflow-img-.jpg" alt="">
+        <h4>Objectifs et premiers pas</h4>
+        <p>
+          Le choix de Voiceflow pour le développement du chatbot a été guidé par sa
+          facilité d'utilisation et sa compatibilité avec WhatsApp. J'ai donc entrepris la création de flux de
+          conversation intuitifs grâce à
+          un système de glisser-déposer. J'ai intégré des médias tels que des images
+          pour enrichir l'expérience utilisateur. De plus, j'ai utilisé des variables pour personnaliser les réponses et
+          suivre l'état de la conversation. J'ai également intégré des APIs externes pour enrichir les fonctionnalités
+          du chatbot.
+        </p>
+      </div>
+      <div class="row">
+        <img src="./img/intégration-ia-partie-chatbot.jpg" alt="">
+        <h4>Intégration de l'IA </h4>
+        <p>Voiceflow permet d'incorporer une intelligence artificielle avancée, offrant des
+          fonctionnalités telles que l'ajustement du nombre de mots dans les réponses et la modulation de l'intensité de
+          la réponse selon le contexte.</p>
+      </div>
+      <div class="row">
+        <img src="./img/personalitation-ia-partie-chatbot.jpg" alt="">
+        <h4>Personnalisation avancée </h4>
+        <p>L'IA de Voiceflow a été configurée pour répondre de manière dynamique et
+          personnalisée aux interactions des utilisateurs, permettant une expérience utilisateur plus riche et engagée.
+          Les capacités de l'IA ont été exploitées pour simuler une conversation naturelle, ajustant les réponses en
+          fonction des inputs reçus pour mieux servir les besoins des patients du cabinet.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="copyright">
+      <p>2025 Benslimane Tamime, CREA-Genève.</p>
+    </div>
+    <a href="#acceuil" class="scroll-top">
+      <i class="ri-arrow-up-s-fill"></i>
+    </a>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 1400,
+    });
+
+    var typingEffect = new Typed(".typedText", {
+      strings: ["Tamime", "Etudiant.", "Développeur.", "Youtubeur."],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 2000
+    })
+  </script>
+</body>
+
+</html>

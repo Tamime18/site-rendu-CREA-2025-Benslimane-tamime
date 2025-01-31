@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- #CSS : Fichier de styles principal -->
+  <link rel="stylesheet" href="style.css">
+  <!-- #box icon : Bibliothèque d'icônes Boxicons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!--remix icon : Bibliothèque d'icônes Remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- AOS : Animate On Scroll pour les animations au défilement -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Logo du site avec un <span> pour une partie colorée -->
+    <a href="#" class="logo">BENSLIMANE <span>Tamime</span></a>
+    
+    <!-- Icône pour le menu burger en version mobile -->
+    <div class="bx bx-menu" id="menu-icon"></div>
+    
+    <!-- Barre de navigation -->
+    <ul class="navlist">
+      <li><a href="#acceuil">Acceuil</a></li>
+      <li><a href="#a-propos">À Propos</a></li>
+      <li><a href="#sommaire">Sommaire</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </header>
+
+  <!-- Section principale de présentation (hero) -->
+  <section class="hero" id="acceuil">
+    <!-- Contenu principal de la hero -->
+    <div class="main-content" data-aos="fade-in">
+      <div class="featured-name">
+        <h1>Je suis <span class="typedText"></span></h1>
+      </div>
+      <p>
+        Étudiant en 2ᵉ année de développement web et application à CREA Genève, j’ai réalisé un stage au cabinet
+        orthodontique du Dr Olivier Quinty à Saint-Genis. Durant ce stage, j’ai développé un chatbot intégré sur
+        WhatsApp et sur le site web du cabinet, découvrant ainsi de nouveaux défis techniques et la mise en pratique
+        concrète de ma formation CREA.
+      </p>
+      <div class="social">
+        <!-- Liens d'icônes vers les réseaux sociaux -->
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="https://www.instagram.com/_tdz_213_/?hl=fr"><i class="ri-instagram-fill"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+        <a href="https://www.youtube.com/@n-ma4023"><i class="ri-youtube-fill"></i></a>
+      </div>
+      <!-- Bouton voir CV -->
+      <div class="main-btn">
+        <a href="./img/CV finale Tamime - Copie.pdf" class="btn">Voir CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section "À propos" avec texte et image -->
+  <section class="a-propos" id="a-propos">
+    <div class="a-propos-img" data-aos="zoom-in-down">
+      <img src="./img/photo-tamime.png" alt="tamime-picture">
+    </div>
+    <div class="a-propos-text" data-aos="zoom-in-up">
+      <h2>Codons l'<span>avenir</span> une ligne à la fois ! </h2>
+      <div class="exp-area">
+        <p>
+          À Propos <br><br>
+          Je possède de bonnes compétences en HTML, CSS et JavaScript, qui sont essentielles pour le développement web.
+          Au-delà de ces compétences techniques, mes forces résident dans la résolution de problèmes, la créativité, la
+          persévérance et une forte capacité de collaboration en équipe. Ces qualités me permettent de transformer des
+          idées innovantes en solutions numériques concrètes et efficaces, comme démontré lors de mon stage où j'ai
+          conçu un chatbot sophistiqué pour améliorer les interactions patient au cabinet du Dr. Olivier Quinty.
+          <br><br>
+          Mes Valeurs <br><br>
+          La créativité, l'intégrité et l'excellence guident mon travail. Je m'engage à créer des solutions qui allient
+          fonctionnalité et esthétique, en restant toujours à la pointe des évolutions technologiques pour offrir des
+          services modernes et efficaces. <br><br>
+          Futur Professionnel <br><br>
+          Mon objectif est de mettre à profit mes compétences en freelance ou en dirigeant ma propre agence. Je suis
+          motivé par le défi de numériser les industries traditionnelles, leur apportant des outils pour innover et
+          évoluer dans notre ère digitale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Sommaire -->
+  <section class="sommaire" id="sommaire">
+    <div class="center-text" data-aos="fade-down">
+      <h2><span>SOMMAIRE</span> </h2>
+      <h2>Durant ce stage, j'ai <span>Appris</span> </h2>
+    </div>
+    <div class="sommaire-content" data-aos="zoom-in-up">
+      <!-- Cartes présentant chaque Sbut/aspiration -->
+      <div class="box">
+        <h3>Développement de compétences techniques :</h3><br>
+        <p>
+          But : Renforcer et élargir les compétences en programmation web, avec un accent particulier sur la conception
+          de chatbots via Voiceflow. <br><br>
+          Aspiration : Maîtriser l'utilisation de Voiceflow et d'autres outils comme Meta for Developers et Flowbridge,
+          pour la création de solutions interactives adaptées à des plateformes telles que WhatsApp.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Collaboration en équipe :</h3><br>
+        <p>
+          But : Augmenter les compétences en communication et en travail d'équipe, particulièrement avec des experts
+          hors du domaine technologique. <br><br>
+          Aspiration : Engager des interactions productives avec des professionnels du secteur de la santé, en
+          appliquant des technologies web pour répondre à des besoins spécifiques.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Maîtrise du cycle de développement de projets :</h3><br>
+        <p>
+          But : Acquérir une compréhension approfondie du cycle de vie complet des projets, de la
+          planification au rendu. <br><br>
+          Aspiration : Être impliqué activement dans chaque étape du projet pour gagner une vision complète du processus
+          de développement.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Résolution de défis techniques et optimisation :</h3><br>
+        <p>
+          But : Développer des capacités de résolution de problèmes complexes et d'optimisation sous contrainte,
+          spécialement en contexte réglementé comme WhatsApp. <br><br>
+          Aspiration : Aborder et résoudre efficacement les complications techniques, en respectant les contraintes de
+          sécurité et de fonctionnalité de la plateforme.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Innovation et Créativité en Conception :</h3><br>
+        <p>
+          But : Explorer et intégrer des solutions innovantes et créatives dans le développement de chatbots. <br><br>
+          Aspiration : Utiliser les capacités de Voiceflow pour expérimenter avec des fonctionnalités avancées et des
+          intégrations personnalisées, poussant les limites de ce que les chatbots peuvent réaliser pour améliorer
+          l'expérience utilisateur.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Apprentissage Continu et Adaptabilité :</h3><br>
+        <p>
+          But : Cultiver une attitude d'apprentissage continu face aux technologies émergentes et aux changements
+          rapides dans le domaine du développement web. <br><br>
+          Aspiration : Adapter rapidement les connaissances acquises à de nouvelles situations et exigences, en restant
+          flexible et réactif face aux défis techniques et aux opportunités de développement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Projets -->
+  <section class="projets" id="projets">
+    <div class="center-text" data-aos="fade-down">
+      <h2>Mes <span>Projets</span></h2>
+    </div>
+    <div class="projets-content" data-aos="zoom-in-up">
+      <!-- Chaque .row représente un bloc de projet -->
+      <div class="row">
+        <img src="./img/recherches-images.jpg" alt="">
+        <h4>Recherche / reflexion / documentation</h4>
+        <!-- Liens internes menant aux pages spécifiques -->
+        <a href="recherches.html #objectifs" class="btn">Découvrir</a>
+      </div>
+      <div class="row">
+        <img src="./img/image-chatbot.jpg" alt="">
+        <h4>Développement du chatbot</h4>
+        <a href="chatbot.html #objectifs" class="btn">Découvrir</a>
+      </div>
+      <div class="row">
+        <img src="./img/image-outils-internet.jpg" alt="">
+        <h4>Utilisation d'outils et leurs intégration / implémentation</h4>
+        <a href="outils.html #objectifs" class="btn">Découvrir</a>
+      </div>
+      <div class="row">
+        <img src="./img/image-création-vidéos.jpg" alt="">
+        <h4>Les vidéos que j'ai réalisé</h4>
+        <a href="vidéos.html #objectifs" class="btn">Découvrir</a>
+      </div>
+      <div class="row">
+        <img src="./img/images-gestion-projet.jpg" alt="">
+        <h4>Gestion du projet</h4>
+        <a href="gestion-projet.html #objectifs" class="btn">Découvrir</a>
+      </div>
+      <div class="row">
+        <img src="./img/image-siteweb.jpg" alt="">
+        <h4>Le site que j'ai réaliser</h4>
+        <a href="site.html #objectifs" class="btn">Découvrir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Conclusion -->
+  <section class="conclusion" id="conclusion">
+    <div class="center-text" data-aos="fade-down">
+      <h2><span>Conclusion</span></h2>
+    </div>
+    <div class="conclusion-text" data-aos="zoom-in">
+      <div class="part1">
+        <h3>Bilan <span>Personnel</span> et Projection <span>Professionnelle</span></h3>
+        <p>
+          Ce stage a marqué une étape importante de mon parcours professionnel, me permettant
+          de passer de connaissances théoriques à la réalisation
+          concrète d’un projet complet. Cette progression a renforcé mes compétences techniques,
+          affiné ma capacité d’adaptation et m’a ouvert à de nouvelles méthodes de travail.
+        </p>
+      </div>
+      <div class="part2">
+        <p>
+          Sur le plan humain, travailler avec un médecin haut placé et une équipe chaleureuse
+          et experte m’a permis de saisir l’importance de la collaboration, de la communication
+          et de l’esprit d’équipe. J’ai également découvert de nouveaux horizons, croisant
+          le domaine médical et l’univers du développement, ce qui m’a inspiré des perspectives
+          professionnelles plus larges.
+        </p>
+      </div>
+      <div class="part3">
+        <p>
+          Fort de cette expérience, je me projette désormais vers une carrière en freelance
+          ou la création de ma propre agence, avec la volonté de numériser et de transformer
+          des industries encore peu familières avec le digital. C’est animé de cet esprit
+          innovant et de cette vision élargie que je me tourne vers l’avenir, prêt à relever
+          de nouveaux défis et à apporter ma contribution au monde professionnel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="copyright">
+      <p>2025 Benslimane Tamime, CREA-Genève.</p>
+    </div>
+    <a href="#acceuil" class="scroll-top">
+      <i class="ri-arrow-up-s-fill"></i>
+    </a>
+  </div>
+
+  <!-- 1. Importe du fichier JavaScript. 
+       Il contient probablement votre propre logique, événements, etc. -->
+  <script src="./script.js"></script>
+
+  <!-- 2. Importe la bibliothèque AOS (Animate On Scroll). 
+       Celle-ci permet de créer des animations lorsque l'utilisateur fait défiler la page. -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- 3. Importe la bibliothèque Typed.js. 
+       Elle sert à simuler un effet de frappe de texte. -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <!-- 4. Ouvre un bloc script pour initialiser et configurer ces bibliothèques. -->
+  <script>
+    // 5. Initialise AOS avec des paramètres personnalisés (offset et duration).
+    AOS.init({
+      offset: 300,
+      duration: 1400,
+    });
+
+    // 6. Crée une instance de Typed, en ciblant l'élément avec la classe .typedText.
+    //    Ce code définit les textes, la vitesse de frappe, la vitesse d'effacement, etc.
+    var typingEffect = new Typed(".typedText", {
+      strings: ["Tamime", "Etudiant.", "Développeur.", "Youtubeur."],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 2000
+    });
+  </script>
+</body>
+</html>

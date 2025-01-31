@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --text-color: #1b1f24;
+    --bg-color: #1b1f24;
+    --second-bg-color: #fff;
+    --third-bg-color: #22282f;
+    --main-color: #13bbff;
+    --other-color: black;
+
+    --h1-font: 4.5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1rem;
+}
+
+body {
+    color: var(--text-color);
+    background: var(white);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 16%;
+    background: transparent;
+    transition: all .50s ease;
+}
+
+.logo {
+    font-size: 36px;
+    color: var(--second-bg-color);
+    font-weight: 600;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: var(--main-color);
+    margin-left: 40px;
+    transition: all .50s ease;
+}
+
+.navlist a:hover {
+    color: darkblue;
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 15px var(--main-color);
+}
+
+/* ----- Menu déroulant sur "Travail" avec effet smooth ----- */
+
+/* 1) Le conteneur de la sous-liste : par défaut, on ne l'affiche pas. */
+.navlist .dropdown {
+    position: relative;
+    /* Permet de positionner la sous-liste en absolu */
+}
+
+.navlist .dropdown .submenu {
+    position: absolute;
+    top: 100%;
+    /* La sous-liste s'affiche en dessous du lien parent */
+    left: 0;
+    background: var(--second-bg-color);
+    padding: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    min-width: 160px;
+    /* Largeur mini du menu, ajustez selon besoin */
+    z-index: 9999;
+
+    /* Pour l'animation fluide */
+    visibility: hidden;
+    /* On garde l'élément dans le flux mais invisible */
+    opacity: 0;
+    /* Transparent initialement */
+    transform: translateY(10px);
+    /* Légèrement décalé vers le bas */
+    pointer-events: none;
+    /* Désactive les clics quand invisible */
+
+    /* Transitions : 
+       - visibility 0s linear 0.3s => la visibilité redevient "visible" sans délai 
+         lors du hover, mais se cache après la transition d'opacité. 
+       - opacity et transform sur 0.3s => l'effet de fade + glissement */
+    transition: visibility 0s linear 0.3s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* 2) Les liens de la sous-liste */
+.navlist .dropdown .submenu li {
+    padding: 5px 10px;
+    margin: 0;
+    list-style: none;
+}
+
+.navlist .dropdown .submenu li a {
+    display: block;
+    padding: 6px 10px;
+    color: var(--main-color);
+    font-size: var(--p-font);
+    text-align: left;
+    padding-right: 3em;
+    transition: color .3s;
+    /* Ajustez le padding si vous voulez rapprocher davantage le texte du bord gauche */
+}
+
+.navlist .dropdown .submenu li a:hover {
+    color: darkblue;
+}
+
+/* 3) L'état au survol : on affiche la sous-liste avec un effet fluide */
+.navlist .dropdown:hover .submenu {
+    visibility: visible;
+    /* On la rend visible */
+    opacity: 1;
+    /* On la rend opaque */
+    transform: translateY(0);
+    /* On ramène l'élément au niveau du parent */
+    pointer-events: auto;
+    /* Active les clics */
+    /* On enlève le délai sur la visibility pour éviter un flash
+       (on la met à 0s), les autres transitions restent à 0.3s */
+    transition: visibility 0s linear 0s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+#menu-icon {
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.h-btn {
+    display: inline-block;
+    padding: 11px 26px;
+    background: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all .50s ease;
+}
+
+.h-btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--main-color);
+    transform: scale(1.1);
+}
+
+section {
+    padding: 110px 16% 90px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./img/cabinet-photo.jpg") top right / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-content h4 {
+    font-size: 1.6rem;
+}
+
+.featured-name {
+    font-size: 50px;
+    font-weight: 600;
+    margin-block: 20px;
+}
+
+.typedText {
+    text-transform: capitalize;
+    color: var(--main-color);
+}
+
+.main-content h1 {
+    font-size: var(--h1-font);
+    font-weight: 900;
+    margin: 20px 0px 20px;
+    line-height: 1.2;
+    color: var(--second-bg-color);
+}
+
+.main-content p {
+    font-size: var(--p-font);
+    font-weight: 400;
+    width: 620px;
+    max-width: 100%;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.social {
+    margin-bottom: 40px;
+}
+
+.social i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--main-color);
+    border-radius: 50%;
+    backdrop-filter: brightness(88%);
+    font-size: 20px;
+    margin-right: 17px;
+    box-shadow: 0 0 20px transparent;
+    cursor: pointer;
+    transition: all .50s ease;
+}
+
+.social i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 26px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all .50s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.btn2 {
+    background: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    margin-left: 15px;
+    transition: all .50s ease;
+}
+
+.btn2:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+header.sticky {
+    background: var(--second-bg-color);
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, .2);
+    padding: 16px 16%;
+}
+
+header.sticky.logo {
+    color: var(--text-color);
+}
+
+header.sticky a {
+    color: var(--other-color);
+}
+
+header.sticky ul li a {
+    color: var(--main-color);
+}
+
+
+
+.exp-area {
+    margin-bottom: 50px;
+}
+
+.exp-area p {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 30px;
+}
+
+.exp-area p span {
+    color: var(--other-color);
+    font-size: var(--p-font);
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-text h2 {
+    font-size: var(--h2-font);
+}
+
+.objectifs-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.2rem;
+}
+
+.box {
+    padding: 80px 40px 66px;
+    border-radius: 28px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    transition: all .50s ease;
+    cursor: pointer;
+}
+
+.box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: var(--other-color);
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.box a {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1.273em;
+    font-weight: 700;
+    padding: 7px 0;
+    color: var(--text-color);
+    border-bottom: 2px solid #5d6c83;
+    transition: all .50s ease;
+}
+
+.box i {
+    vertical-align: middle;
+    font-size: 25px;
+    color: var(--main-color);
+    margin-left: 5px;
+}
+
+.box a:hover {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.box:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.03);
+}
+
+.travail {
+    background: var(--second-bg-color);
+}
+
+.travail-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.2rem;
+}
+
+.row img {
+    height: auto;
+    width: 100%;
+    border-radius: 28px;
+    margin-bottom: 1.4rem;
+}
+
+.row {
+    border-radius: 28px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all .50s ease;
+}
+
+.row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.row p {
+    line-height: 1.5;
+}
+
+.links {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.links:hover {
+    /* Crée un halo (glow) autour du texte */
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 15px var(--main-color);
+    color: var(--main-color);
+}
+
+
+.row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.03);
+    cursor: pointer;
+}
+
+
+.footer {
+    padding: 22px 16%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+copyright p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--other-color);
+}
+
+.scroll-top i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 27px;
+}
+
+@media(max-width:1700px) {
+    header {
+        padding: 20px 8%;
+    }
+
+    header.sticky {
+        padding: 14px 8%;
+    }
+
+    section {
+        padding: 90px 8% 80px;
+    }
+
+    .footer {
+        padding: 18px 8%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+}
+
+@media(max-width:1380px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    header.sticky {
+        padding: 14px 5%;
+    }
+
+    section {
+        padding: 90px 5% 80px;
+    }
+
+    .footer {
+        padding: 18px 5%;
+    }
+
+    .hero {
+        height: 90vh;
+        background-position: center;
+    }
+}
+
+@media (max-width:1290px) {
+    .box {
+        padding: 40px 40px 46px;
+    }
+
+    .box img {
+        width: 100%;
+        height: 60px;
+        max-width: 60px;
+    }
+
+    .box h3 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width:1240px) {
+    :root {
+        --h1-font: 4rem;
+        --h2-font: 2.2rem;
+        --p-font: 15px;
+    }
+}
+
+@media (max-width:950px) {
+    :root {
+        --h1-font: 3.5rem;
+    }
+
+    .social {
+        margin-bottom: 20px;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        transition: all .50s ease;
+    }
+
+    .navlist a {
+        display: block;
+        padding: 17px;
+        font-size: 22px;
+    }
+
+    .navlist.active {
+        right: 0;
+    }
+}
+
+@media (max-width:680px) {
+    .main-content p {
+        width: 100%;
+    }
+}
+
+@media (max-width:470px) {
+    :root {
+        --h1-font: 3rem;
+        --h2-font: 2rem;
+    }
+
+}

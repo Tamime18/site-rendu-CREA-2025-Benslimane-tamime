@@ -1,0 +1,903 @@
+/* RESET DE BASE ET POLICE */
+/* Sélecteur universel : applique ces règles à tous les éléments */
+* {
+    /* Enlève les marges par défaut du navigateur */
+    margin: 0;
+    /* Enlève les espacements internes par défaut */
+    padding: 0;
+    /* Calcule la taille totale (width/height) incluant le padding et la bordure */
+    box-sizing: border-box;
+    /* Utilise la police 'Inter' comme police principale */
+    font-family: 'Inter', sans-serif;
+    /* Supprime le soulignement des liens */
+    text-decoration: none;
+    /* Retire les puces des listes */
+    list-style: none;
+    /* Active le défilement fluide pour les ancres */
+    scroll-behavior: smooth;
+}
+
+/* VARIABLES (PALETTE) */
+/* :root : zone où l’on définit des variables CSS globales */
+:root {
+    /* Couleur principale du texte */
+    --text-color: #1b1f24;
+    /* Couleur de fond principale */
+    --bg-color: #1b1f24;
+    /* Couleur de fond secondaire (ici blanc) */
+    --second-bg-color: #fff;
+    /* Couleur d’accent principal (bleu) */
+    --main-color: #13bbff;
+    /* Couleur alternative (ici noir) */
+    --other-color: black;
+
+    /* Tailles de police pour titres et paragraphes */
+    --h1-font: 4.5rem;
+    --h2-font: 2.9rem;
+    --p-font: 1rem;
+}
+
+/* BODY */
+/* Style de base du corps de page */
+body {
+    /* Couleur du texte, prise dans les variables */
+    color: var(--text-color);
+    /* Fond de la page (second-bg-color = blanc) */
+    background: var(--second-bg-color);
+}
+
+/* HEADER */
+/* En-tête fixe en haut de la page */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Au lieu de background blanc + ombre, on le met transparent */
+    padding: 40px 16%;
+    background: transparent;
+    transition: all .50s ease;
+    
+    /* Supprime la box-shadow de base :
+       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+}
+/* LOGO */
+/* Logo du site (texte stylisé) */
+.logo {
+    /* Taille du texte du logo */
+    font-size: 36px;
+    /* Couleur de texte : noir (other-color) ou #1b1f24 */
+    color: var(--second-bg-color);
+    /* Épaisseur semi-gras */
+    font-weight: 600;
+}
+
+/* SPAN */
+/* Change la couleur du <span> dans le logo */
+span {
+    color: var(--main-color);
+}
+
+/* NAVLIST */
+/* Barre de navigation : liste de liens */
+.navlist {
+    display: flex;
+}
+
+/* NAVLIST A */
+/* Style des liens de la navigation */
+.navlist a {
+    /* Taille de police pour les liens */
+    font-size: var(--p-font);
+    /* Épaisseur moyenne */
+    font-weight: 500;
+    /* Couleur des liens : bleu d'accent */
+    color: var(--main-color);
+    /* Espacement entre chaque lien */
+    margin-left: 40px;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* NAVLIST A :HOVER */
+/* Effet au survol des liens */
+.navlist a:hover {
+    /* Reste en bleu */
+    color: darkblue;
+    /* Effet de halo bleu */
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 10px var(--main-color),
+        0 0 15px var(--main-color);
+}
+
+/* MENU ICON */
+/* Icône du menu (burger) pour la version mobile */
+#menu-icon {
+    /* Taille de l’icône */
+    font-size: 35px;
+    /* Passe au-dessus de tout */
+    z-index: 10001;
+    /* Curseur de la souris */
+    cursor: pointer;
+    /* Masqué par défaut (affiché en media queries) */
+    display: none;
+}
+
+/* BOUTON h-btn */
+/* Style d'un bouton dans l’en-tête (optionnel) */
+.h-btn {
+    /* Traitement comme un bloc en ligne */
+    display: inline-block;
+    /* Marges internes vertical/horizontal */
+    padding: 11px 26px;
+    /* Fond transparent */
+    background: transparent;
+    /* Couleur du texte = bleu principal */
+    color: var(--main-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Taille de police = 15px */
+    font-size: 15px;
+    /* Épaisseur semi-gras */
+    font-weight: 600;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* Survol h-btn */
+/* Effet hover sur ce bouton */
+.h-btn:hover {
+    /* Devient blanc (second-bg-color) en fond */
+    background: var(--second-bg-color);
+    /* Texte passe à la couleur du fond principal (#1b1f24) */
+    color: var(--bg-color);
+    /* Ombre autour en bleu */
+    box-shadow: 0 0 20px var(--main-color);
+    /* Zoom léger */
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+/* Toutes les sections : marges internes */
+section {
+    /* 110px en haut, 16% sur les côtés, 90px en bas */
+    padding: 110px 16% 90px;
+}
+
+/* HERO */
+/* Section d’accueil, pleine hauteur */
+.hero {
+    /* Hauteur de la section sur toute la fenêtre */
+    height: 100vh;
+    /* Largeur en pleine page */
+    width: 100%;
+
+    /*
+     Combinaison d’un dégradé semi-transparent et de l’image de fond.
+     On utilise linear-gradient pour le voile sombre 
+     puis l'image real cover.
+    */
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./img/cabinet-photo.jpg") top right / cover no-repeat;
+
+    /* On continue de centrer verticalement le contenu par Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* MAIN-CONTENT H4 */
+/* Sous-titre dans la hero */
+.main-content h4 {
+    font-size: 1.6rem;
+}
+
+/* FEATURED-NAME */
+/* Nom ou phrase mise en avant */
+.featured-name {
+    font-size: 50px;
+    font-weight: 600;
+    /* Espace vertical */
+    margin-block: 20px;
+}
+
+/* TYPEDTEXT */
+/* Texte animé par typed.js */
+.typedText {
+    /* Mets en majuscule la première lettre de chaque mot */
+    text-transform: capitalize;
+    /* Couleur bleue */
+    color: var(--main-color);
+}
+
+/* Titre hero */
+.main-content h1 {
+    /* Utilise la police h1-font = 4.5rem */
+    font-size: var(--h1-font);
+    /* Très gras */
+    font-weight: 900;
+    /* Marges haut/bas = 20px, rien sur les côtés */
+    margin: 20px 0px 20px;
+    /* Hauteur de ligne */
+    line-height: 1.2;
+    /* Couleur = noir (other-color) */
+    color: var(--second-bg-color);
+}
+
+/* Paragraphe hero */
+.main-content p {
+    /* Taille de police = 1rem */
+    font-size: var(--p-font);
+    /* Épaisseur normale */
+    font-weight: 400;
+    /* Largeur max 620px */
+    width: 620px;
+    /* 100% max pour écrans plus petits */
+    max-width: 100%;
+    /* Couleur = noir (other-color) */
+    color: var(--second-bg-color);
+    /* Espacement vertical entre lignes */
+    line-height: 30px;
+    /* Espace sous le paragraphe */ 
+    margin-bottom: 15px;
+    /*ombrage autour du texte pour le rendre visible*/
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* SOCIAL */
+/* Bloc des icônes sociales */
+.social {
+    /* Espace en bas = 40px */
+    margin-bottom: 40px;
+}
+
+/* SOCIAL I */
+/* Icônes spécifiques */
+.social i {
+    /* Mise en page en ligne */
+    display: inline-flex;
+    /* Centre vertical/horizontal */
+    align-items: center;
+    justify-content: center;
+    /* Taille = 40x40 */
+    width: 40px;
+    height: 40px;
+    /* Couleur de l'icône = bleu */
+    color: var(--main-color);
+    /* Forme ronde */
+    border-radius: 50%;
+    /* Filtre (ici pour la luminosité) */
+    backdrop-filter: brightness(88%);
+    /* Taille de police = 20px */
+    font-size: 20px;
+    /* Espace à droite = 17px */
+    margin-right: 17px;
+    /* Ombre initiale transparente */
+    box-shadow: 0 0 20px transparent;
+    /* Pointeur cliquable */
+    cursor: pointer;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* SOCIAL I:HOVER */
+/* Effet de survol sur icône */
+.social i:hover {
+    /* Zoom léger */
+    transform: scale(1.1);
+    /* Ombre bleue */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* BOUTON .btn */
+/* Bouton principal (couleur bleue) */
+.btn {
+    /* Comportement inline-block */
+    display: inline-block;
+    /* Espacements intérieurs vertical/horizontal */
+    padding: 11px 26px;
+    /* Fond = bleu principal */
+    background: var(--main-color);
+    /* Texte = couleur du fond principal (#1b1f24) */
+    color: var(--bg-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Coins arrondis */
+    border-radius: 8px;
+    /* Taille de police = 15px */
+    font-size: 15px;
+    /* Épaisseur semi-gras */
+    font-weight: 600;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* Survol .btn */
+.btn:hover {
+    /* Devient transparent */
+    background: transparent;
+    /* Le texte devient bleu */
+    color: var(--main-color);
+    /* Ombre bleue */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* .btn2 */
+/* Deuxième style de bouton, sans fond */
+.btn2 {
+    /* Fond transparent */
+    background: transparent;
+    /* Texte = bleu principal */
+    color: var(--main-color);
+    /* Bordure bleue */
+    border: 2px solid var(--main-color);
+    /* Espace à gauche = 15px */
+    margin-left: 15px;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+
+/* Survol .btn2 */
+.btn2:hover {
+    /* Fond = bleu */
+    background: var(--main-color);
+    /* Texte = couleur du fond principal (#1b1f24) */
+    color: var(--bg-color);
+}
+
+/* HEADER STICKY */
+/* Apparence du header quand on lui ajoute la classe .sticky */
+header.sticky {
+    /* Là on remet le fond blanc (ou autre couleur) + ombre */
+    background: var(--second-bg-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 16px 16%;
+    transition: all .50s ease;
+}
+
+header.sticky .logo {
+    color: var(--text-color); /* repasse en texte foncé */
+}
+header.sticky .navlist a {
+    color: var(--main-color); /* ou noir, selon ta charte */
+}
+
+/* .a-propos */
+/* Section "À propos" */
+.a-propos {
+    /* Fond blanc (second-bg-color) */
+    background: var(--second-bg-color);
+    /* Mise en page en grille sur 2 colonnes */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Centre verticalement les éléments */
+    align-items: center;
+    /* Espace entre les colonnes */
+    gap: 1rem;
+}
+
+/* .a-propos-img img */
+/* Image dans la section À propos */
+.a-propos-img img {
+    /* Prend toute la largeur possible */
+    width: 100%;
+    /* Hauteur fixe = 530px */
+    height: 530px;
+    /* Largeur max = 530px */
+    max-width: 530px;
+    /* Forme arrondie (ronde) */
+    border-radius: 50%;
+    /* Recadre l’image si elle dépasse */
+    object-fit: cover;
+    /* Bordure bleue de 7px */
+    border: 7px solid var(--main-color);
+    /* Ombre bleue autour */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* .a-propos-text h2 */
+/* Titre dans la partie À propos */
+.a-propos-text h2 {
+    /* Taille de police = var(--h2-font) = 2.9rem */
+    font-size: var(--h2-font);
+    /* Hauteur de ligne un peu plus serrée */
+    line-height: 1.3;
+    /* Espace sous le titre */
+    margin-bottom: 20px;
+}
+
+/* .exp-area */
+/* Sous-bloc de texte */
+.exp-area {
+    /* Espace en bas = 50px */
+    margin-bottom: 50px;
+}
+.exp-area p {
+    /* Couleur du texte = #1b1f24 */
+    color: var(--text-color);
+    /* Police semi-gras */
+    font-weight: 600;
+    /* Taille de police = 19px */
+    font-size: 19px;
+    /* Hauteur de ligne = 30px */
+    line-height: 30px;
+}
+exp-area p span {
+    /* Couleur noire ou autre (other-color) */
+    color: var(--other-color);
+    /* Police = var(--p-font) = 1rem */
+    font-size: var(--p-font);
+    /* Épaisseur normale */
+    font-weight: 400;
+    /* Petite marge à gauche */
+    margin-left: 8px;
+}
+
+/* TEXT CENTER */
+/* Classe pour centrer le texte */
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    /* Titre de taille var(--h2-font) = 2.9rem */
+    font-size: var(--h2-font);
+}
+
+/* SOMMAIRE CONTENT */
+/* Grille pour la section Sommaire */
+.sommaire-content {
+    /* Affichage en grid */
+    display: grid;
+    /* Auto-fit, colonnes min 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    /* Centre les items */
+    align-items: center;
+    /* Espace entre cartes */
+    gap: 2.3rem;
+    /* Marge au top = 4.2rem */
+    margin-top: 4.2rem;
+}
+
+/* BOX */
+/* Style des "cartes" */
+.box {
+    /* Padding : top/bottom = 80px, left/right = 40px + 66px en bas */
+    padding: 80px 40px 66px;
+    /* Fond = blanc (second-bg-color) */
+    background: var(--second-bg-color);
+    /* Bords arrondis */
+    border-radius: 28px;
+    /* Bordure transparente par défaut */
+    border: 1px solid transparent;
+    /* Ombre bleue faible */
+    box-shadow: 0 0 5px var(--main-color);
+    /* Transition douce */
+    transition: all .50s ease;
+    /* Curseur pointer */
+    cursor: pointer;
+}
+.box h3 {
+    /* Titre interne, 20px */
+    font-size: 20px;
+    /* Semi-gras */
+    font-weight: 700;
+    /* Espace en bas = 10px */
+    margin-bottom: 10px;
+}
+.box p {
+    /* Police = var(--p-font) = 1rem */
+    font-size: var(--p-font);
+    /* Poids normal */
+    font-weight: 400;
+    /* Couleur noire (other-color) */
+    color: var(--other-color);
+    /* Hauteur de ligne = 30px */
+    line-height: 30px;
+    /* Espace en bas */
+    margin-bottom: 20px;
+}
+.box a {
+    /* Comportement inline-block */
+    display: inline-block;
+    /* Taille de police = 22px */
+    font-size: 22px;
+    /* Hauteur de ligne ~1.273em */
+    line-height: 1.273em;
+    /* Épaisseur 700 (semi-gras) */
+    font-weight: 700;
+    /* Espace vertical = 7px */
+    padding: 7px 0;
+    /* Couleur = var(--text-color) (#1b1f24) */
+    color: var(--text-color);
+    /* Bordure en bas gris-bleu */
+    border-bottom: 2px solid #5d6c83;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+.box a:hover {
+    /* Bordure en bas devient bleue */
+    border-bottom: 2px solid var(--main-color);
+}
+.box:hover {
+    /* Bordure bleue sur l'ensemble de la box */
+    border: 1px solid var(--main-color);
+    /* Décalage et zoom (effet survol) */
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* .projets */
+.projets {
+    /* Fond = blanc */
+    background: var(--second-bg-color);
+}
+
+/* .projets-content */
+.projets-content {
+    /* Grille adaptative */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.2rem;
+}
+
+/* ROW */
+.row {
+    /* Fond blanc */
+    background: var(--second-bg-color);
+    /* Bords arrondis */
+    border-radius: 28px;
+    /* Bordure transparente par défaut */
+    border: 1px solid transparent;
+    /* Ombre bleue */
+    box-shadow: 0 0 5px var(--main-color);
+    /* Padding interne */
+    padding: 20px;
+    /* Transition douce */
+    transition: all .50s ease;
+}
+.row img {
+    /* Image responsive */
+    height: auto;
+    width: 100%;
+    /* Coins arrondis */
+    border-radius: 28px;
+    /* Espace en bas */
+    margin-bottom: 1.4rem;
+}
+.row h4 {
+    /* Titre interne = 25px */
+    font-size: 25px;
+    /* Semi-gras */
+    font-weight: 700;
+    /* Espace en bas = 10px */
+    margin-bottom: 10px;
+    /* Hauteur de ligne */
+    line-height: 1.4;
+}
+.row:hover {
+    /* Bordure bleue au survol */
+    border: 1px solid var(--main-color);
+    /* Léger décalage + zoom */
+    transform: translateY(-5px) scale(1.03);
+    /* Curseur pointer */
+    cursor: pointer;
+}
+
+/* .links */
+/* Liens soulignés dynamiquement */
+.links {
+    /* Couleur bleue */
+    color: var(--main-color);
+    /* Pas de soulignement */
+    text-decoration: none;
+    /* Transition douce */
+    transition: all 0.3s ease;
+}
+.links:hover {
+    /* Halo bleu */
+    text-shadow: 0 0 5px var(--main-color),
+                 0 0 10px var(--main-color),
+                 0 0 15px var(--main-color);
+    /* Reste en bleu */
+    color: var(--main-color);
+}
+
+/* Conclusion */
+.conclusion {
+    /* Positionnement relatif si besoin (éléments absolus) */
+    position: relative;
+}
+.conclusion-text {
+    /* Positionnement par défaut */
+    position: relative;
+    /* Largeur pleine */
+    width: 100%;
+    /* Hauteur mini de 600px */
+    min-height: 600px;
+}
+.conclusion-text .part1,
+.conclusion-text .part2,
+.conclusion-text .part3 {
+    /* Ces 3 blocs sont en position absolue */
+    position: absolute;
+    /* Largeur fixée à 300px */
+    max-width: 300px;
+    width: 300px;
+    /* Couleur du texte = noir */
+    color: var(--other-color);
+    /* Hauteur de ligne = 1.6 */
+    line-height: 1.6;
+}
+.conclusion-text .part1 {
+    /* Placé en haut à gauche */
+    top: 0;
+    left: 0;
+}
+.conclusion-text .part1 h3 {
+    /* Couleur = var(--text-color) = #1b1f24 */
+    color: var(--text-color);
+    /* Taille = 1.8rem */
+    font-size: 1.8rem;
+    /* Espace en bas = 20px */
+    margin-bottom: 20px;
+}
+.conclusion-text .part2 {
+    /* Centré au milieu (top/left = 50%) */
+    top: 50%;
+    left: 50%;
+    /* Décalage négatif pour centrer */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.conclusion-text .part3 {
+    /* En bas à droite */
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+/* FOOTER */
+.footer {
+    /* Espace interne = 22px vertical, 16% horizontal */
+    padding: 22px 16%;
+    /* Fond blanc */
+    background: var(--second-bg-color);
+    /* Mise en page en flex */
+    display: flex;
+    /* Centre verticalement */
+    align-items: center;
+    /* Sépare le contenu sur la largeur */
+    justify-content: space-between;
+    /* Espace entre les éléments */
+    gap: 2rem;
+}
+copyright p {
+    /* Taille de police = 15px */
+    font-size: 15px;
+    /* Poids normal */
+    font-weight: 400;
+    /* Couleur = noir (other-color) */
+    color: var(--other-color);
+}
+
+/* SCROLL TOP */
+/* Bouton pour remonter la page */
+.scroll-top i {
+    /* Mise en page en ligne */
+    display: inline-flex;
+    /* Centre le contenu */
+    align-items: center;
+    justify-content: center;
+    /* Fond = bleu */
+    background: var(--main-color);
+    /* Taille = 45x45 */
+    width: 45px;
+    height: 45px;
+    /* Cercle */
+    border-radius: 50%;
+    /* Couleur du texte = #1b1f24 */
+    color: var(--text-color);
+    /* Taille de l’icône */
+    font-size: 27px;
+}
+
+/* MEDIA QUERIES */
+/* Styles adaptatifs pour différentes largeurs */
+
+/* max-width:1700px */
+@media(max-width:1700px) {
+    /* Header, margin/padding, etc. */
+    header {
+        padding: 20px 8%;
+    }
+    header.sticky {
+        padding: 14px 8%;
+    }
+    section {
+        padding: 90px 8% 80px;
+    }
+    .footer {
+        padding: 18px 8%;
+    }
+    .logo {
+        font-size: 28px;
+        color: var(--other-color);
+    }
+}
+
+/* max-width:1380px */
+@media(max-width:1380px) {
+    header {
+        padding: 20px 5%;
+    }
+    header.sticky {
+        padding: 14px 5%;
+    }
+    section {
+        padding: 90px 5% 80px;
+    }
+    .footer {
+        padding: 18px 5%;
+    }
+    .hero {
+        /* Hauteur réduite */
+        height: 90vh;
+        /* Centre l’image */
+        background-position: center;
+    }
+}
+
+/* max-width:1290px */
+@media (max-width:1290px) {
+    .box {
+        /* Réduit le padding */
+        padding: 40px 40px 46px;
+    }
+    .box img {
+        /* Ajuste la taille des images à 60px de haut/large */
+        width: 100%;
+        height: 60px;
+        max-width: 60px;
+    }
+    .box h3 {
+        font-size: 21px;
+    }
+}
+
+/* max-width:1240px */
+@media (max-width:1240px) {
+    .a-propos {
+        /* Passe en une colonne */
+        grid-template-columns: 1fr;
+        /* Sur un espace plus restreint */
+        grid-area: 2rem;
+        text-align: center;
+    }
+    .a-propos-img img {
+        /* Centre l'image */
+        text-align: center;
+        width: 100%;
+        height: 400px;
+        max-width: 400px;
+        /* Cercle */
+        border-radius: 50%;
+        /* Ajuste la mise en page */
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    :root {
+        /* Redéfinit les tailles de police pour plus de lisibilité */
+        --h1-font: 4rem;
+        --h2-font: 2.2rem;
+        --p-font: 15px;
+    }
+}
+
+/* max-width:950px */
+@media (max-width:950px) {
+    :root {
+        /* H1 moins grand */
+        --h1-font: 3.5rem;
+    }
+    .social {
+        /* Réduit la marge */
+        margin-bottom: 20px;
+    }
+    #menu-icon {
+        /* Icône du menu apparaît */
+        display: block;
+    }
+    .navlist {
+        /* Menu sur mobile en position absolue */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /* Fond sombre */
+        background: var(--bg-color);
+        transition: all .50s ease;
+    }
+    .navlist a {
+        /* Affiche les liens en bloc vertical */
+        display: block;
+        padding: 17px;
+        font-size: 22px;
+    }
+    .navlist.active {
+        /* Fait glisser le menu à droite = 0 */
+        right: 0;
+    }
+}
+
+/* max-width:998px */
+@media (max-width:998px) {
+    .conclusion-text {
+        /* Annule la position absolue */
+        position: static;
+        /* Mets en colonne */
+        display: flex;
+        flex-direction: column;
+        /* Centre horizontalement */
+        align-items: center;
+        /* Espace vertical entre blocs */
+        gap: 40px;
+        /* Espace en haut */
+        padding-top: 40px;
+        /* Hauteur auto */
+        min-height: auto;
+    }
+    .conclusion-text .part1,
+    .conclusion-text .part2,
+    .conclusion-text .part3 {
+        /* Deviennent statiques, prennent toute la largeur */
+        position: static;
+        width: 100%;
+        max-width: 700px;
+        /* Centrage du texte */
+        text-align: center;
+        /* Pas de transformation */
+        transform: none;
+    }
+}
+
+/* max-width:680px */
+@media (max-width:680px) {
+    .main-content p {
+        /* Paragraphe prend toute la largeur */
+        width: 100%;
+        /* Reste en noir ou autre color */
+        color: var(--other-color);
+    }
+}
+
+/* max-width:470px */
+@media (max-width:470px) {
+    :root {
+        /* Réduit encore les tailles de police */
+        --h1-font: 3rem;
+        --h2-font: 2rem;
+    }
+    .a-propos-img img {
+        /* Centre l'image, taille 300px de haut, max, etc. */
+        text-align: center;
+        width: 100%;
+        height: 300px;
+        max-width: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+}

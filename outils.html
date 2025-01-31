@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- #CSS -->
+    <link rel="stylesheet" href="outils.css">
+    <!-- #box icon -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!--remix icon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Intégration et implémentation d'<span>outils</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navlist">
+            <li><a href="index.html">Acceuil</a></li>
+            <li><a href="#objectifs">Objectifs</a></li>
+            <!-- ÉLÉMENT CLÉ : le menu déroulant -->
+            <li class="dropdown">
+                <a href="#travail">Travail</a>
+                <ul class="submenu">
+                    <!-- Voici vos différents travaux, 
+             chacun menant à une page ou section dédiée -->
+                    <li><a href="recherches.html">Recherches</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                    <li><a href="vidéos.html">Vidéos</a></li>
+                    <li><a href="gestion-projet.html">Gestion de Projets</a></li>
+                    <li><a href="site.html">Mon Site</a></li>
+                </ul>
+            </li>
+            <!-- Fin du menu déroulant -->
+            <li><a href="chatbot.html #objectifs">Précédent</a></li>
+            <li><a href="vidéos.html #objectifs">Suivant</a></li>
+        </ul>
+    </header>
+
+    <section class="hero" id="acceuil">
+        <div class="main-content" data-aos="fade-in">
+            <div class="featured-name">
+                <h1>Je suis <span class="typedText"></span></h1>
+            </div>
+            <p>Étudiant en 2ᵉ année de développement web et application à CREA Genève, j’ai réalisé un stage au cabinet
+                orthodontique du Dr Olivier Quinty à Saint-Genis. Durant ce stage, j’ai développé un chatbot intégré sur
+                WhatsApp et sur le site web du cabinet, découvrant ainsi de nouveaux défis techniques et la mise en
+                pratique
+                concrète de ma formation CREA.</p>
+            <div class="social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="https://www.instagram.com/_tdz_213_/?hl=fr"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="https://www.youtube.com/@n-ma4023"><i class="ri-youtube-fill"></i></a>
+            </div>
+            <div class="main-btn">
+                <a href="./img/CV finale Tamime - Copie.pdf" class="btn">Voir CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="objectifs" id="objectifs">
+        <div class="center-text" data-aos="fade-down">
+            <h2>O<span>BJECTIFS</span></h2>
+        </div>
+        <div class="objectifs-content" data-aos="zoom-in-up">
+            <div class="box">
+                <h3>Intégration avec WhatsApp et autres plateformes :</h3><br>
+                <p>
+                    Objectif : Réussir l'intégration technique du chatbot avec WhatsApp en utilisant Meta Business et
+                    Flowbridge pour connecter l'interface du chatbot à la messagerie instantanée.<br><br>
+                    Raison : WhatsApp est une plateforme clé pour communiquer avec les patients, et son intégration
+                    efficace est essentielle pour rendre le chatbot accessible et fonctionnel pour tous les
+                    utilisateurs.</p>
+            </div>
+
+            <div class="box">
+                <h3>Exploration et Sélection d'Outils d'Intégration Flexibles :</h3><br>
+                <p>Objectif : Identifier et intégrer une variété d'outils de développement et de plateformes qui offrent
+                    une grande flexibilité pour l'extension des fonctionnalités du chatbot.<br><br>
+                    Raison : Choisir des outils qui permettent une intégration facile avec diverses applications et
+                    services (comme Gmail) peut
+                    significativement améliorer la polyvalence et l'efficacité du chatbot, en lui permettant de
+                    s'adapter aux évolutions futures des besoins du cabinet et des technologies disponibles.</p>
+            </div>
+
+            <div class="box">
+                <h3>Optimisation de l'interopérabilité:</h3><br>
+                <p>Objectif : Assurer que tous les outils et systèmes intégrés, tels que les API de Voiceflow, Meta, et
+                    d'autres services tiers, fonctionnent harmonieusement ensemble sans interférence.<br><br>
+                    Raison : Une bonne interopérabilité garantit une expérience utilisateur fluide et réduit les risques
+                    d'erreur technique, augmentant ainsi la fiabilité du système dans son ensemble.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="travail" id="travail">
+        <div class="center-text" data-aos="fade-down">
+            <h2>Mes <span>Travaux</span></h2>
+        </div>
+        <div class="travail-content" data-aos="zoom-in-up">
+            <div class="row">
+                <img src="./img/make.com-image-partie-outils.jpg" alt="">
+                <img src="./img/google-cloud-img-partie-outils.jpg" alt="">
+                <h4>Make (Integromat) et Google Cloud</h4>
+                <p>Pour connecter Voiceflow à d'autres applications utiles, j'ai utilisé <a class="links"
+                        href="https://www.make.com/en">Make</a>, anciennement connu sous
+                    le nom d'Integromat. Cette plateforme d'automatisation a joué un rôle crucial en liant <a
+                        class="links"
+                        href="https://console.cloud.google.com/apis/credentials/consent?referrer=search&inv=1&invt=AblPnA&project=gmailbot-438713">l'API
+                        Gmail
+                        de Google Cloud</a> au chatbot. L'intégration via Make a permis au chatbot de gérer des tâches
+                    telles
+                    que l'envoi automatique d'e-mails directement depuis l'interface du chatbot, facilitant ainsi des
+                    interactions telles que la confirmation de rendez-vous ou l'envoi d'informations médicales
+                    importantes, de manière sécurisée et conforme aux normes de confidentialité.</p><br>
+            </div>
+            <div class="row">
+                <img src="./img/mailerchek-img-partie-outil.jpg" alt="">
+                <h4>MailerCheck</h4>
+                <p><a class="links"
+                        href="https://www.mailercheck.com/cleaner-lists?source=google&medium=cpc&campaign=MC%20-%20Brand%20-%20Exact&content=Brand%20Exact&term=mailercheck&ml_campaignid=20217462137&ml_adsetid=148095943605&gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHstKURggm4lqPM_wliCLu34o62HJ1rHnkMB-68G8wnTUoC_vOgbVXoaAomQEALw_wcB">MailerCheck</a>
+                    a été utilisé pour vérifier la validité des adresses e-mails fournies par les
+                    utilisateurs lors des interactions avec le chatbot. En utilisant des tokens, cette API a permis de
+                    s'assurer que chaque adresse e-mail entrée était non seulement formatée correctement, mais aussi
+                    réellement existante et active. Cela a réduit le risque d'erreurs dans la communication et a
+                    amélioré l'efficacité des campagnes d'information ou de suivi automatisé par e-mail.</p><br>
+            </div>
+            <div class="row">
+                <img src="./img/loqate-img-partie-outils.jpg" alt="">
+                <h4>Loqate</h4>
+                <p>Similairement à MailerCheck, <a class="links" href="https://www.loqate.com/en-gb/">Loqate</a> a été
+                    intégré pour valider les numéros de téléphone saisis par
+                    les utilisateurs. Cet outil a assuré que les numéros de téléphone étaient valides et pouvaient
+                    recevoir des appels ou des SMS, ce qui est crucial pour les confirmations de rendez-vous ou les
+                    urgences. L'utilisation de tokens a également permis de vérifier la conformité et la validité des
+                    informations entrées, assurant ainsi une communication fiable et précise avec les patients.</p><br>
+            </div>
+            <div class="row">
+                <img src="./img/intégration-bot-whatsapp-partie-outils.jpg" alt="">
+                <h4>Intégration du chatbot sur WhatsApp avec flowbridge</h4>
+                <p><a class="links" href="https://developers.facebook.com/docs/development/register">Première étape</a> : (Création de l'application sur Meta)
+                    Pour débuter, j'ai <a class="links" href="https://developers.facebook.com/docs/development/create-an-app">créé une application</a> via la plateforme <a class="links"
+                        href="https://developers.facebook.com/">Meta for Developers</a>. Cela m'a permis
+                    d'accéder à diverses options d'intégration, y compris celle pour WhatsApp, essentielle pour la suite
+                    du projet.
+                    <br><br>
+                    Deuxième étape : (Intégration avec WhatsApp)
+                    Dans les paramètres de mon application, j'ai sélectionné l'intégration avec WhatsApp. J'ai ensuite
+                    configuré une identification en tant qu'administrateur et activé les permissions nécessaires pour
+                    exploiter les différentes fonctionnalités de WhatsApp. Cette configuration a généré un <a class="links" href="https://developers.facebook.com/docs/whatsapp/business-management-api/get-started#1--acquire-an-access-token-using-a-system-user-or-facebook-login">token
+                        d'accès</a>, crucial pour les étapes suivantes.
+                </p><br>
+            </div>
+            <div class="row">
+                <img src="./img/Flowbridge-img-partie-outils.jpg" alt="">
+                <h4>Configuration sur Flowbridge et Intégration client </h4>
+                <p> Troisième étape :
+                    Je me suis dirigé vers <a class="links" href="https://landing.flowbridge.app/">Flowbridge</a> que
+                    j’ai découvert sur youtube et qui est une interface permettant de créer le pont entre mon projet
+                    voiceflow et le compte whatsapp permettant d’intégrer le chatbot facilement sur WhatsApp. Là, j'ai
+                    créé un projet qui portait le même nom que mon projet Voiceflow. J'ai récupéré l'ID du projet et la
+                    clé d'API Voiceflow dans les paramètres de mon application pour les saisir dans Flowbridge.
+                    <br><br>
+                    Quatrièeme étape :
+                    J'ai procédé à la création d'une intégration client sur Flowbridge, en choisissant parmi les options
+                    d'intégration pour WhatsApp. J'ai utilisé le token WhatsApp, créé précédemment sur Meta, pour cette
+                    intégration.
+                </p><br>
+            </div>
+            <div class="row">
+                <img src="./img/webhook-config-partie-outils.jpg" alt="">
+                <h4>Configuration des Webhooks et Ajout du numéro de téléphone</h4>
+                <p> Cinquième étape :
+                    Ensuite, j'ai récupéré l'URL de l'intégration client réalisée sur Flowbridge et l'ai entrée dans la
+                    partie <a class="links"
+                        href="https://developers.facebook.com/apps/1137705784354345/whatsapp-business/wa-dev-console/?business_id=792018869177481">Webhook
+                        WhatsApp URL callback sur Meta</a>. J'ai également entré le token fourni, modifié les
+                    champs du webhook selon nos besoins, et activé l'option pour recevoir des messages.
+                    <br><br>
+                    <a class="links" href="https://developers.facebook.com/docs/whatsapp/cloud-api/get-started">Sièxème étape</a> :
+                    Pour finaliser l'intégration du chatbot sur WhatsApp, Il a été donné un numéro de test de type
+                    américain par défaut pour réaliser des essaies de conversation avec le chatbot mais cela ne marchais
+                    pas. J’ai donc consulté le docteur et il à été convenu d’ ajouter le numéro de téléphone
+                    professionnel du cabinet qui à été acheté spécialement pour le chatbot. Cette dernière étape était
+                    cruciale pour permettre au chatbot de fonctionner pleinement et d'interagir avec les patients via
+                    WhatsApp.
+                </p><br>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="copyright">
+            <p>2025 Benslimane Tamime, CREA-Genève.</p>
+        </div>
+        <a href="#acceuil" class="scroll-top">
+            <i class="ri-arrow-up-s-fill"></i>
+        </a>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1400,
+        });
+
+        var typingEffect = new Typed(".typedText", {
+            strings: ["Tamime", "Etudiant.", "Développeur.", "Youtubeur."],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 2000
+        })
+    </script>
+</body>
+
+</html>
