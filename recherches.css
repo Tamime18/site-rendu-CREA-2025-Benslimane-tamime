@@ -230,6 +230,7 @@ span {
     cursor: pointer;
     /* Masqué par défaut (affiché en media queries) */
     display: none;
+    color: var(--second-bg-color);
 }
 
 /* .H-BTN */

@@ -154,6 +154,7 @@ span {
     z-index: 10001;
     cursor: pointer;
     display: none;
+    color: var(--second-bg-color);
 }
 
 .h-btn {
