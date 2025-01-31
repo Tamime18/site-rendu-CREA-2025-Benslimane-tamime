@@ -71,7 +71,7 @@ header {
 .logo {
     /* Taille du texte du logo */
     font-size: 36px;
-    /* Couleur de texte : noir (other-color) ou #1b1f24 */
+    /* Couleur de texte */
     color: var(--second-bg-color);
     /* Épaisseur semi-gras */
     font-weight: 600;
